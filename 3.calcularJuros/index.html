@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Calculadora Avançada de Juros</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  label { display: block; margin-top: 10px; }
+  input, button { margin-top: 5px; padding: 5px; width: 200px; }
+  .resultado { margin-top: 20px; font-weight: bold; }
+  canvas { margin-top: 20px; max-width: 800px; }
+</style>
+</head>
+<body>
+
+<h2>Calculadora de Juros</h2>
+
+<form id="formJuros">
+  <label>Valor Original (R$):
+    <input type="number" id="valor" step="0.01" required>
+  </label>
+  <label>Data de Vencimento:
+    <input type="date" id="vencimento" required>
+  </label>
+  <label>Taxa de Juros Diário (%):
+    <input type="number" id="taxa" step="0.01" value="2.5" required>
+  </label>
+  <button type="submit">Calcular</button>
+</form>
+
+<div class="resultado" id="resultado"></div>
+<canvas id="graficoJuros" width="800" height="400"></canvas>
+
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>
