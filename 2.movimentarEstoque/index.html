@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Controle Avançado de Estoque</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  label { display: block; margin-top: 10px; }
+  input, select, button { margin-top: 5px; padding: 5px; width: 300px; }
+  table { margin-top: 20px; border-collapse: collapse; width: 80%; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+  th { background-color: #f4f4f4; }
+</style>
+</head>
+<body>
+
+<h2>Controle de Estoque</h2>
+
+<form id="formMovimentacao">
+  <label>Produto:
+    <select id="produtoSelect"></select>
+  </label>
+  <label>Quantidade (positivo = entrada, negativo = saída):
+    <input type="number" id="quantidade" required>
+  </label>
+  <label>Descrição da Movimentação:
+    <input type="text" id="descricao" required>
+  </label>
+  <button type="submit">Registrar Movimentação</button>
+</form>
+
+
+<h3>Estoque Atual</h3>
+<table id="tabelaEstoque">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Produto</th>
+      <th>Quantidade</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<h3>Filtrar Movimentações</h3>
+<select id="filtroProduto">
+  <option value="todos">Todos os Produtos</option>
+</select>
+
+<h3>Movimentações</h3>
+<table id="tabelaMovimentacoes">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Produto</th>
+      <th>Quantidade</th>
+      <th>Descrição</th>
+      <th>Data/Hora</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<h3>Gráfico de Estoque</h3>
+<canvas id="graficoEstoque" width="800" height="400"></canvas>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
